@@ -1,0 +1,249 @@
+/* CSAE 104, Lab 2 — Campus Notices Board
+   All page colours are defined as variables here. */
+:root {
+  --brand: #1d4e89;
+  --brand-hover: #163b69;
+  --brand-soft: #e0ecf8;
+  --surface: #ffffff;
+  --page: #f4f7fa;
+  --text: #1f2933;
+  --muted: #526477;
+  --border: #d9e2ec;
+  --header-text: #ffffff;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+header {
+  background: var(--brand);
+  color: var(--header-text);
+  padding: 1.5rem 1.5rem 1.25rem;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0 0 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 1rem 0.5rem 0;
+}
+
+nav a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--header-text);
+  outline-offset: 4px;
+}
+
+main {
+  max-width: 720px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+main h2 {
+  color: var(--brand);
+  margin: 0 0 0.75rem;
+  font-size: 1.45rem;
+}
+
+main section > p {
+  margin-top: 0;
+}
+
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.notice h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+/* Cascade lesson: a class-based selector is more specific than a bare
+   paragraph selector such as p { color: red; }. The temporary red rule was
+   removed after inspecting its crossed-out declaration in DevTools.
+   Target .notice .meta directly instead of using !important. */
+.notice .meta {
+  color: var(--muted);
+  margin: 0.55rem 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--brand-soft);
+  color: var(--brand);
+  border-radius: 4px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+#categories ul {
+  padding-left: 1.5rem;
+}
+
+#deadlines table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+caption {
+  padding-bottom: 0.5rem;
+  text-align: left;
+  color: var(--muted);
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.65rem;
+  text-align: left;
+}
+
+th {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+#submit form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+#submit form > p:first-child {
+  margin-top: 0;
+}
+
+label,
+legend {
+  font-weight: 600;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.85rem;
+}
+
+fieldset p {
+  margin: 0.5rem 0 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  margin-right: 0.4rem;
+  accent-color: var(--brand);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+button {
+  background: var(--brand);
+  color: var(--header-text);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.625rem 1.25rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--brand-hover);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Optional Week 2 challenge: system dark mode, without JavaScript. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #86b7f0;
+    --brand-hover: #b7d4f5;
+    --brand-soft: #203b58;
+    --surface: #1a2632;
+    --page: #121b24;
+    --text: #e7edf4;
+    --muted: #b2bfcc;
+    --border: #425465;
+    --header-text: #101f2e;
+  }
+}

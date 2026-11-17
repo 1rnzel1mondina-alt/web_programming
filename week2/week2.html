@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A sample Campus Notices Board with announcements, upcoming deadlines, and a notice-submission form for DMMMSU-SLUC.">
+  <title>Campus Notices</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Campus Notices</h1>
+    <p>News and announcements for the DMMMSU-SLUC campus community.</p>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#notices">Notices</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#deadlines">Deadlines</a></li>
+        <li><a href="#submit">Post a notice</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="notices">
+      <h2>Latest notices</h2>
+      <p>These are sample announcements for the class activity.</p>
+
+      <article class="notice">
+        <h3>Library hours extended</h3>
+        <p class="meta">
+          <time datetime="2026-10-12">12 October 2026</time>
+          &middot; <span class="tag">Academic</span>
+        </p>
+        <p>The library stays open until 9 PM during midterm week.</p>
+      </article>
+
+      <article class="notice">
+        <h3>Student organization orientation</h3>
+        <p class="meta">
+          <time datetime="2026-10-15">15 October 2026</time>
+          &middot; <span class="tag">Event</span>
+        </p>
+        <p>New students are invited to learn about campus organizations and their activities.</p>
+      </article>
+
+      <article class="notice">
+        <h3>Keep campus pathways clean</h3>
+        <p class="meta">
+          <time datetime="2026-10-18">18 October 2026</time>
+          &middot; <span class="tag">General</span>
+        </p>
+        <p>Everyone is encouraged to use the designated waste bins and keep common areas tidy.</p>
+      </article>
+    </section>
+
+    <section id="categories">
+      <h2>Notice categories</h2>
+      <ul>
+        <li>Academic</li>
+        <li>Event</li>
+        <li>General</li>
+      </ul>
+    </section>
+
+    <section id="deadlines">
+      <h2>Upcoming deadlines</h2>
+      <table>
+        <caption>Sample deadlines for January 2027</caption>
+        <thead>
+          <tr>
+            <th scope="col">Activity</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Enrolment ends</td>
+            <td><time datetime="2027-01-20">20 January 2027</time></td>
+          </tr>
+          <tr>
+            <td>Programming contest registration</td>
+            <td><time datetime="2027-01-25">25 January 2027</time></td>
+          </tr>
+          <tr>
+            <td>Student project proposal submission</td>
+            <td><time datetime="2027-01-30">30 January 2027</time></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="submit">
+      <h2>Post a notice</h2>
+      <p>This form is for practice only. It does not save or send notices yet.</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="title">Title</label><br>
+          <input type="text" id="title" name="title" maxlength="100" required>
+        </p>
+
+        <fieldset>
+          <legend>Notice details</legend>
+          <p>
+            <label for="category">Category</label><br>
+            <select id="category" name="category" required>
+              <option value="">Choose a category</option>
+              <option value="academic">Academic</option>
+              <option value="event">Event</option>
+              <option value="general">General</option>
+            </select>
+          </p>
+          <p>
+            <label for="date">Date</label><br>
+            <input type="date" id="date" name="date" required>
+          </p>
+        </fieldset>
+
+        <p>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </p>
+
+        <p>
+          <label for="email">Your email</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+          <input type="checkbox" id="confirm" name="confirm" value="yes" required>
+          <label for="confirm">I confirm that the information in this notice is accurate.</label>
+        </p>
+
+        <button type="submit">Post notice</button>
+      </form>
+    </section>
+
+    <section id="subscribe">
+      <h2>Subscribe to campus notices</h2>
+      <p>Enter your email address to practise signing up for campus updates.</p>
+      <form action="#" method="post">
+        <p>
+          <label for="subscriber-email">Email address</label><br>
+          <input type="email" id="subscriber-email" name="subscriber_email"
+                 placeholder="student@example.com" autocomplete="email" required>
+        </p>
+        <p>
+          <input type="checkbox" id="subscribe-consent" name="subscribe_consent"
+                 value="yes" required>
+          <label for="subscribe-consent">I agree to receive campus notice updates.</label>
+        </p>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>This is a demonstration form and does not send or store information.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>College of Computer Science, DMMMSU-SLUC</p>
+  </footer>
+</body>
+</html>
